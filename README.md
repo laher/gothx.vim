@@ -46,6 +46,24 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 | `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
 | `:GothxIfErr`  | [ ]    | `:GoIfErr`          | | |
 
+## LSP notes
+
+The Vim ecosystem offers several LSP clients, including [LanguageClient-neovim](github.com/autozimu/LanguageClient-neovim), [vim-lsc](github.com/natebosch/vim-lsc), [coc.nvim](github.com/neoclide/coc.nvim). Some plugins offer LSP features too, such as [ALE](github.com/w0rp/ale) and vim-go.
+
+For the time being I recommend vim-lsp, because in combination with `vim-lsp-settings` and `asymcomplete-lsp`, it offers easy installation of Language Servers, and LSP-based completion support.
+
+To use `vim-lsp` using `vim-plug`, I recommend the following plugins:
+
+```
+Plug 'https://github.com/prabirshrestha/async.vim'
+Plug 'https://github.com/prabirshrestha/asyncomplete.vim'
+Plug 'https://github.com/prabirshrestha/asyncomplete-lsp.vim'
+Plug 'https://github.com/prabirshrestha/vim-lsp'
+Plug 'https://github.com/mattn/vim-lsp-settings'
+```
+
+_note that this assumes `vim-plug`. Plugin manager tends to use a different function name for specifying plugins._
+
 ## Out of scope
 
  * GoReferrers, GoDef, GoInfo, GoFmt, GoRename, ...
