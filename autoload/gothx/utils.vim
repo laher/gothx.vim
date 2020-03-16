@@ -1,8 +1,8 @@
 
 
-function! gothx#utils#output_handler(job_id, data, event_type)
+function! s:output_handler(job_id, data, event_type)
     if a:event_type == "exit"
-      echom 'Done. Exit code: ' . a:data
+      echom 'GoThx: job done. Exit code: ' . a:data
     else
       echo a:job_id . ' ' . a:event_type
       echo join(a:data, "; ")
@@ -11,15 +11,16 @@ endfunction
 
 function! gothx#utils#run_maybe_async(argv)
   if &rtp =~ 'async.vim'
+    echom 'GoThx: running async job'
     let jobid = async#job#start(a:argv, {
         \ 'on_stdout': function('s:output_handler'),
         \ 'on_stderr': function('s:output_handler'),
         \ 'on_exit': function('s:output_handler'),
     \ })
     if jobid > 0
-        echom 'job started'
+        echom 'GoThx: job started'
     else
-        echom 'job failed to start'
+        echom 'GoThx: job failed to start'
     endif
   else
     echom 'async.vim not available. Running synchronously: ' . join(a:argv)
