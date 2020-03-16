@@ -29,10 +29,10 @@ NOTE: if you have [async.vim](https://github.com/prabirshrestha/async.vim) insta
 ## Features
 
 | Feature      | Status | `vim-go` feature | Related Tool                            | Notes  |
-|------------------------------------------------------------------------------------|--------|
-| :GoThxKeyify | [x]    | :GoKeyify        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
-| :GoThxDoc    | [ ]    | :GoDoc           | [gogetdoc]()           | Watch out for gopkg.dev |
-| :GoThxAddTags | [ ]   | :GoAddTags       | | |
+|--------------|--------|------------------|-----------------------------------------|--------|
+| `:GoThxKeyify` | [x]    | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
+| `:GoThxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](x)          | Watch out for gopkg.dev |
+| `:GoThxAddTags` | [ ]   | `:GoAddTags`       | | |
 
 ## NOTES
 
