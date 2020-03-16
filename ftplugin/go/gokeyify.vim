@@ -78,4 +78,4 @@ let &cpo = s:cpo_save
 unlet s:cpo_save
 
 " vim: sw=2 ts=2 et
-command! -nargs=0 GoThxKeyify call s:gokeyify()
+command! -nargs=0 GothxKeyify call s:gokeyify()

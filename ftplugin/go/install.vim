@@ -1,2 +1,2 @@
 
-command! -nargs=0 GoThxInstallBinaries call gothx#install#binaries()
+command! -nargs=0 GothxInstallBinaries call gothx#install#binaries()
