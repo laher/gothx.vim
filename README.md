@@ -40,7 +40,7 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 |--------------|----------|--------------------|-----------------------------------------|--------|
 | `:GothxKeyify` | [x]    | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
 | `:GothxTest`   | [ ]    | `:GoTest` | | |
-| `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](x)          | Watch out for gopkg.dev |
+| `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | Watch out for pkg.go.dev support |
 | `:GothxAddTags`| [ ]    | `:GoAddTags`       | | |
 | `:GothxAlt`    | [ ]    | `:GoAlternate`     | | This is just vim-script |
 | `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
