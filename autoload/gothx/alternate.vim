@@ -19,10 +19,11 @@ function! gothx#alternate#Switch(bang, cmd) abort
     return
   endif
   if !filereadable(alt_file) && !bufexists(alt_file) && !a:bang
-    call gothx#log#Error("couldn't find ".alt_file)
+    call gothx#log#Warning("creating file ".alt_file)
+    execute ":vsplit " . alt_file
     return
   elseif empty(a:cmd)
-    execute ":e " . alt_file
+    execute ":vsplit " . alt_file
   else
     execute ":" . a:cmd . " " . alt_file
   endif

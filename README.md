@@ -42,7 +42,7 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 | `:GothxTest`   | [ ]    | `:GoTest` | | |
 | `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | Watch out for pkg.go.dev support |
 | `:GothxAddTags`| [ ]    | `:GoAddTags`       | | |
-| `:GothxAlt`    | [ ]    | `:GoAlternate`     | | This is just vim-script |
+| `:GothxAlt`    | [x]    | `:GoAlternate`     | | This is just vim-script |
 | `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
 | `:GothxIfErr`  | [ ]    | `:GoIfErr`          | | |
 

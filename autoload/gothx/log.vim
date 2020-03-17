@@ -15,7 +15,7 @@ function! s:log(msg, hi)
 
   exe 'echohl ' . a:hi
   for line in l:msg
-    echom "vim-go: " . line
+    echom "gothx: " . line
   endfor
   echohl None
 endfunction
