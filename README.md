@@ -47,11 +47,11 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 |--------------|----------|--------------------|-----------------------------------------|--------|
 | `:GothxKeyify` | [x]    | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
 | `:GothxAlt`    | [x]    | `:GoAlternate`     | | This is just vim-script |
-| `:GothxTest`   | [ ]    | `:GoTest` | | |
+| `:GothxTest`   | [x]    | `:GoTest`          | | Basic version, no output |
 | `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | Watch out for pkg.go.dev support |
 | `:GothxAddTags`| [ ]    | `:GoAddTags`       | | |
 | `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
-| `:GothxIfErr`  | [ ]    | `:GoIfErr`          | | |
+| `:GothxIfErr`  | [ ]    | `:GoIfErr`         | | |
 
 ## LSP notes
 

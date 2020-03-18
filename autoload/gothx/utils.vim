@@ -4,14 +4,36 @@ function! s:output_handler(job_id, data, event_type)
     if a:event_type == "exit"
       echom 'gothx: job done. Exit code: ' . a:data
     else
-      echo a:job_id . ' ' . a:event_type
-      echo join(a:data, "; ")
+      for l in a:data
+        put =(l)
+      endfor
+      " put =(join(a:data, "\n"))
+      " put =(join(a:data, "; "))
+      "call writefile(a:data, glob('/tmp/out.log'), 'a')
     endif
 endfunction
 
+function! s:scratch()
+    let bnr = bufexists('scratch')
+    "echo 'buffer: ' .bnr
+    if bnr > 0
+      bd scratch
+    endif
+    split
+    noswapfile hide enew
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    "setlocal nobuflisted
+    "lcd ~
+    file scratch
+endfunction
+
 function! gothx#utils#run_maybe_async(argv)
+
   if &rtp =~ 'async.vim'
-    echom 'gothx: running async job'
+    call s:scratch()
+    put ='gothx: running async job'
+    "execute '!date > /tmp/out.log 2>&1'
     let jobid = async#job#start(a:argv, {
         \ 'on_stdout': function('s:output_handler'),
         \ 'on_stderr': function('s:output_handler'),
