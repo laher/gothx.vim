@@ -32,6 +32,13 @@ Plug 'laher/gothx.vim'
 
 NOTE: if you have [async.vim](https://github.com/prabirshrestha/async.vim) installed, `gothx.vim` will install your go things asynchronously … if not, it'll let you know it's blocking your UI thread.
 
+## Configuration
+
+If you want `:Gothx` commands to resemble vim-go's `:Go` commands instead:
+
+`let g:gothx_command_prefix = 'Go'` (default = `Gothx`)
+
+
 ## Features and Planned Features
 
 You're free to map these commands to the vim-go names if you're not using vim-go - I just avoided it for compatibility reaons.
@@ -39,10 +46,10 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 | Feature      | Implemented | `vim-go` feature | Related Tool                            | Notes  |
 |--------------|----------|--------------------|-----------------------------------------|--------|
 | `:GothxKeyify` | [x]    | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
+| `:GothxAlt`    | [x]    | `:GoAlternate`     | | This is just vim-script |
 | `:GothxTest`   | [ ]    | `:GoTest` | | |
 | `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | Watch out for pkg.go.dev support |
 | `:GothxAddTags`| [ ]    | `:GoAddTags`       | | |
-| `:GothxAlt`    | [x]    | `:GoAlternate`     | | This is just vim-script |
 | `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
 | `:GothxIfErr`  | [ ]    | `:GoIfErr`          | | |
 
@@ -97,3 +104,5 @@ _note that this assumes `vim-plug`. Plugin manager tends to use a different func
    * https://github.com/mattn/vim-gosrc
    * https://github.com/mattn/go-errcheck-vim
    * https://github.com/laher/gokeyify.vim
+
+okthxvi!
