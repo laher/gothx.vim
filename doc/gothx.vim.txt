@@ -1,0 +1,26 @@
+*gothx.vim.txt* Go plugin, thx
+*gothx*
+
+==============================================================================
+# gothx                                                                      #
+==============================================================================
+CONTENTS                                                        *gothx-contents*
+
+  1. Intro........................................|gothx-intro|
+  2. Readme.......................................|gothx-readme|
+
+==============================================================================
+INTRO                                                              *gothx-intro*
+
+
+Basic Go utility for Vim, which deliberately avoids anything covered by gopls,
+and anything pre-modules.
+
+
+==============================================================================
+README                                                            *gothx-readme*
+
+For the time-being, please visit https://github.com/laher/gothx.vim/ to view 
+the readme. This plugin is very new & green. Better docs to follow.
+
+ vim: ft=help tw=78 et ts=2 sw=2 sts=2 norl
