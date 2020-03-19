@@ -20,13 +20,14 @@ I *LOVE* the vim-go project. I fell in love with `vim` through that project, and
 
 For example, using vim-plug:
 
-```
+```viml
+Plug 'prabirshrestha/async.vim'
 Plug 'laher/gothx.vim'
 ```
 
 ### Installing/updating binaries (once only)
 
-```
+```vim
 :GothxInstallBinaries
 ```
 
@@ -47,7 +48,8 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 |--------------|----------|--------------------|-----------------------------------------|--------|
 | `:GothxKeyify` | [x]    | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
 | `:GothxAlt`    | [x]    | `:GoAlternate`     | | This is just vim-script |
-| `:GothxTest`   | [x]    | `:GoTest`          | | Basic version, no output |
+| `:GothxTest`   | [x]    | `:GoTest`          | | Basic version, no options |
+| `:GothxTest`   | [x]    | `:GoRun`           | | Basic version, no options |
 | `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | Watch out for pkg.go.dev support |
 | `:GothxAddTags`| [ ]    | `:GoAddTags`       | | |
 | `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
@@ -61,7 +63,7 @@ For the time being I recommend vim-lsp, because in combination with `vim-lsp-set
 
 To use `vim-lsp` using `vim-plug`, I recommend the following plugins:
 
-```
+```viml
 Plug 'https://github.com/prabirshrestha/async.vim'
 Plug 'https://github.com/prabirshrestha/asyncomplete.vim'
 Plug 'https://github.com/prabirshrestha/asyncomplete-lsp.vim'
@@ -98,11 +100,11 @@ _note that this assumes `vim-plug`. Plugin manager tends to use a different func
  * See also:
    * https://github.com/mattn/vim-goimports (covered by LSP)
    * https://github.com/mattn/vim-gorename (covered by LSP)
+   * https://github.com/mattn/vim-gorun (similar feature in gothx.vim)
+   * https://github.com/laher/gokeyify.vim (similar feature in gothx.vim)
    * https://github.com/mattn/vim-goaddtags 
-   * https://github.com/mattn/vim-gorun
    * https://github.com/mattn/vim-goimpl
    * https://github.com/mattn/vim-gosrc
    * https://github.com/mattn/go-errcheck-vim
-   * https://github.com/laher/gokeyify.vim
 
 okthxvi!
