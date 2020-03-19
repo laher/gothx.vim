@@ -1,6 +1,9 @@
 package main
 
-import "io/ioutil"
+import (
+	"fmt"
+	"io/ioutil"
+)
 
 func main() {
 
@@ -9,5 +12,7 @@ func main() {
 	}
 	_ = s{"b"}
 	ioutil.ReadFile("x.txt")
+
+	fmt.Println("oh-yeah")
 
 }
