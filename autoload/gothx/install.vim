@@ -1,10 +1,9 @@
 
-function! gothx#install#keyify()
-  let argv = ['go', 'get', '-u', '-v', 'honnef.co/go/tools/cmd/keyify']
-  call gothx#utils#run_maybe_async(argv)
-endfunction
 
 function! gothx#install#binaries()
-  call gothx#install#keyify()
+  let keyify_addr = 'honnef.co/go/tools/cmd/keyify'
+  let impl_addr = 'github.com/josharian/impl'
+  let argv = ['go', 'get', '-u', '-v', keyify_addr, impl_addr]
+  call gothx#utils#run_maybe_async(argv)
 endfunction
 

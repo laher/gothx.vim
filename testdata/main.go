@@ -5,6 +5,13 @@ import (
 	"io/ioutil"
 )
 
+type i interface {
+	Do()
+}
+
+type c struct {
+}
+
 func main() {
 
 	type s struct {
