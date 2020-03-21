@@ -34,16 +34,16 @@ Plug 'laher/gothx.vim'
 ### Installing/updating binaries (once only)
 
 ```vim
-:GothxInstallBinaries
+:ThxInstallBinaries
 ```
 
 NOTE: if you have [async.vim](https://github.com/prabirshrestha/async.vim) installed, `gothx.vim` will install your go things asynchronously … if not, it'll let you know it's blocking your UI thread.
 
 ## Configuration
 
-If you want `:Gothx` commands to resemble vim-go's `:Go` commands instead:
+If you want `:Thx…` commands to resemble vim-go's `:Go` commands instead:
 
-`let g:gothx_command_prefix = 'Go'` (default = `Gothx`)
+`let g:gothx_command_prefix = 'Go'` (default = `Thx`)
 
 
 ## Features and Planned Features
@@ -52,20 +52,20 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 
 | Feature        | Done     | `vim-go` feature   | Related Tool                            | Notes  |
 |----------------|----------|--------------------|-----------------------------------------|--------|
-| `:GothxKeyify` | [x]      | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
-| `:GothxAlt`    | [x]      | `:GoAlternate`     | | This is just vim-script |
-| `:GothxTest`   | [x]      | `:GoTest`          | | Basic version, no options |
-| `:GothxRun`    | [x]      | `:GoRun`           | | Basic version, no options |
-| `:GothxImpl`   | [x]      | `:GoImpl`          | [impl](https://github.com/josharian/impl) |  |
+| `:ThxKeyify`   | [x]      | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
+| `:ThxAlt`      | [x]      | `:GoAlternate`     | | This is just vim-script |
+| `:ThxTest`     | [x]      | `:GoTest`          | | Basic version, no options |
+| `:ThxRun`      | [x]      | `:GoRun`           | | Basic version, no options |
+| `:ThxImpl`     | [x]      | `:GoImpl`          | [impl](https://github.com/josharian/impl) |  |
 | `gx` on import | [x]      | -                  | | In vim, `gx` opens urls in a browser. Use it to opek gopkg.dev on import statements |
+| `:ThxPlay`     | [X]      | `:GoPlay`          | | vim-go uses vim-script plus `curl`. I'm using a tool which doesn't support line selection (yet). |
 
 
 | Planned        | Started | `vim-go` feature | Related Tool                            | Notes  |
 |----------------|---------|--------------------|-----------------------------------------|--------|
-| `:GothxDoc`    | [ ]     | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | See `gx`, above. Seems like a good start. |
-| `:GothxAddTags`| [ ]     | `:GoAddTags`       | [gomodifytags](https://github.com/fatih/gomodifytags) | |
-| `:GothxPlay`   | [ ]     | `:GoPlay`          | | This is vim-script plus `curl`. Maybe use `mattn/webapi-vim`? |
-| `:GothxIfErr`  | [ ]     | `:GoIfErr`         | [iferr](https://github.com/koron/iferr) | Is this something `gopls` plans to cover? |
+| `:ThxDoc`      | [ ]     | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | See `gx`, above. Seems like a good start. |
+| `:ThxAddTags`  | [ ]     | `:GoAddTags`       | [gomodifytags](https://github.com/fatih/gomodifytags) | |
+| `:ThxIfErr`    | [ ]     | `:GoIfErr`         | [iferr](https://github.com/koron/iferr) | Is this something `gopls` plans to cover? |
 
 ## LSP notes
 

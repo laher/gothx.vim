@@ -1,5 +1,5 @@
-nnoremap <buffer> <silent> <Plug>GothxBrowseDoc :call gothx#gx#Gogx()<cr>
+nnoremap <buffer> <silent> <Plug>ThxBrowseDoc :call gothx#gx#Gogx()<cr>
 
-if !hasmapto('<Plug>GothxBrowseDoc', 'n')
-   nmap <buffer> <silent> gx <Plug>GothxBrowseDoc
+if !hasmapto('<Plug>ThxBrowseDoc', 'n')
+   nmap <buffer> <silent> gx <Plug>ThxBrowseDoc
 endif
