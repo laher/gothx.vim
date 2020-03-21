@@ -51,7 +51,8 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 | `:GothxTest`   | [x]    | `:GoTest`          | | Basic version, no options |
 | `:GothxRun`    | [x]    | `:GoRun`           | | Basic version, no options |
 | `:GothxImpl`   | [x]    | `:GoImpl`          | [impl](https://github.com/josharian/impl) |  |
-| `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | Watch out for pkg.go.dev support |
+| `gx` on import | [ ]    | - | | In vim, `gx` opens urls in a browser. Use it to opek gopkg.dev on import statements |
+| `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | See `gx`, above. Seems like a good start. |
 | `:GothxAddTags`| [ ]    | `:GoAddTags`       | | |
 | `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
 | `:GothxIfErr`  | [ ]    | `:GoIfErr`         | | |
@@ -101,10 +102,10 @@ _note that this assumes `vim-plug`. Plugin manager tends to use a different func
  * See also:
    * https://github.com/mattn/vim-goimports (covered by LSP)
    * https://github.com/mattn/vim-gorename (covered by LSP)
-   * https://github.com/mattn/vim-gorun (similar feature in gothx.vim)
-   * https://github.com/laher/gokeyify.vim (similar feature in gothx.vim)
+   * https://github.com/mattn/vim-gorun (similar feature included in gothx.vim)
+   * https://github.com/laher/gokeyify.vim (similar feature included in gothx.vim)
+   * https://github.com/mattn/vim-goimpl (similar features included in gothx.vim)
    * https://github.com/mattn/vim-goaddtags 
-   * https://github.com/mattn/vim-goimpl
    * https://github.com/mattn/vim-gosrc
    * https://github.com/mattn/go-errcheck-vim
 
