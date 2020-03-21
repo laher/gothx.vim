@@ -2,21 +2,27 @@
 
 A go plugin for vim/nvim, which only tries to do things that `gopls` doesn't do. thx.
 
-The idea of this **Experimental** plugin is:
+The idea of this **Experimental** plugin is twofold:
 
- * To provide features not currently supported by `gopls`, and to focus on modules-aware tooling. 
- * To avoid tools which are not actively embracing modules support (such as `guru`).
- * As `gopls` grows and matures, overlapping features will be deprecated/removed from `gothx.vim` (deprecated and replaced with messages 'use your LSC for this').
+ 1. To provide features which are **not** currently supported by `gopls`.
+   * Use an LSP client. See [below](#recommended-lsp-setup)
+   * As `gopls` grows and matures, overlapping features will be deprecated/removed from `gothx.vim` (deprecated and replaced with messages 'use your LSC for this').
+ 2. To focus on modules-aware tooling. 
+   * Avoid tools which are not actively embracing modules support (such as `guru`, which is being abandoned).
 
-Note that this plugin doesn't ever hope to cover the same featureset as [vim-go](https://github.com/fatih/vim-go), (nor `govim`). 
+Note that this plugin doesn't hope to cover the same featureset as [vim-go](https://github.com/fatih/vim-go), (nor `govim`, probably). 
 
-However, vim-go's large featureset overlaps with [more recent] LSPs, making it an awkward fit for a polymath like me. I like using the same LSP client across different languages, so I'd sooner only use other plugins which expressly avoid LSP-supplied features.
+vim-go's large feature-set overlaps with [recent] LSPs, making it an awkward fit for a polymath like me. I prefer using the same LSP client across different languages, so I'd sooner only use plugins which expressly avoid LSP-supplied features.
 
 ## Special love for vim-go
 
-I *LOVE* the vim-go project. I fell in love with `vim` through that project, and between 2012-2020, it got me using `vim` or `nvim` as my main editor. Many thanks to that team, especially [fatih](https://github.com/fatih) and [bc](https://github.com/bhcleek). If you ever find an way to adjust vim-go with 'getting out of the way of the Language Server' in mind, then I'm keen to embrace it again. 
+I *LOVE* the vim-go project. I fell in love with `vim` through that project, and between 2012-2020, it got me using `vim` or `nvim` as my main editor. vim-go was light-years ahead of other editors during the early days, and I think its 'lego blocks' architecture allowed for other plugin-writers to copy its features easily. Many thanks to the vim-go team, especially [fatih](https://github.com/fatih) and [bc](https://github.com/bhcleek). If vim-go ever gets adjusted with 'getting out of the way of the Language Server' in mind, then I'm keen to embrace it again. 
+
+In the spirit of giving back, I'll make sure to offer PRs to vim-go for any features developed in gothx.vim . Please hold me to that.
 
 ## Install in the usual way
+
+Use vim8 or neovim. Set up an LSP client.
 
 For example, using vim-plug:
 
@@ -44,24 +50,30 @@ If you want `:Gothx` commands to resemble vim-go's `:Go` commands instead:
 
 You're free to map these commands to the vim-go names if you're not using vim-go - I just avoided it for compatibility reaons.
 
-| Feature      | Implemented | `vim-go` feature | Related Tool                            | Notes  |
-|--------------|----------|--------------------|-----------------------------------------|--------|
-| `:GothxKeyify` | [x]    | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
-| `:GothxAlt`    | [x]    | `:GoAlternate`     | | This is just vim-script |
-| `:GothxTest`   | [x]    | `:GoTest`          | | Basic version, no options |
-| `:GothxRun`    | [x]    | `:GoRun`           | | Basic version, no options |
-| `:GothxImpl`   | [x]    | `:GoImpl`          | [impl](https://github.com/josharian/impl) |  |
-| `gx` on import | [ ]    | - | | In vim, `gx` opens urls in a browser. Use it to opek gopkg.dev on import statements |
-| `:GothxDoc`    | [ ]    | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | See `gx`, above. Seems like a good start. |
-| `:GothxAddTags`| [ ]    | `:GoAddTags`       | | |
-| `:GothxPlay`   | [ ]    | `:GoPlay`          | | This is just vim-script |
-| `:GothxIfErr`  | [ ]    | `:GoIfErr`         | | |
+| Feature        | Done     | `vim-go` feature   | Related Tool                            | Notes  |
+|----------------|----------|--------------------|-----------------------------------------|--------|
+| `:GothxKeyify` | [x]      | `:GoKeyify`        | [keyify](honnef.co/go/tools/cmd/keyify) |        | 
+| `:GothxAlt`    | [x]      | `:GoAlternate`     | | This is just vim-script |
+| `:GothxTest`   | [x]      | `:GoTest`          | | Basic version, no options |
+| `:GothxRun`    | [x]      | `:GoRun`           | | Basic version, no options |
+| `:GothxImpl`   | [x]      | `:GoImpl`          | [impl](https://github.com/josharian/impl) |  |
+| `gx` on import | [x]      | -                  | | In vim, `gx` opens urls in a browser. Use it to opek gopkg.dev on import statements |
+
+
+| Planned        | Started | `vim-go` feature | Related Tool                            | Notes  |
+|----------------|---------|--------------------|-----------------------------------------|--------|
+| `:GothxDoc`    | [ ]     | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | See `gx`, above. Seems like a good start. |
+| `:GothxAddTags`| [ ]     | `:GoAddTags`       | [gomodifytags](https://github.com/fatih/gomodifytags) | |
+| `:GothxPlay`   | [ ]     | `:GoPlay`          | | This is vim-script plus `curl`. Maybe use `mattn/webapi-vim`? |
+| `:GothxIfErr`  | [ ]     | `:GoIfErr`         | [iferr](https://github.com/koron/iferr) | Is this something `gopls` plans to cover? |
 
 ## LSP notes
 
-The Vim ecosystem offers several LSP clients, including [LanguageClient-neovim](github.com/autozimu/LanguageClient-neovim), [vim-lsc](github.com/natebosch/vim-lsc), [coc.nvim](github.com/neoclide/coc.nvim). Some plugins offer LSP features too, such as [ALE](github.com/w0rp/ale) and vim-go.
+The Vim ecosystem offers several LSP clients, including [LanguageClient-neovim](github.com/autozimu/LanguageClient-neovim), [vim-lsc](github.com/natebosch/vim-lsc), [coc.nvim](github.com/neoclide/coc.nvim). Some plugins offer LSP features too, such as [ALE](github.com/w0rp/ale) and vim-go. In theory you can use any of these, although I haven't tried them all myself.
 
 For the time being I recommend vim-lsp, because in combination with `vim-lsp-settings` and `asymcomplete-lsp`, it offers easy installation of Language Servers, and LSP-based completion support.
+
+### Recommended LSP Setup
 
 To use `vim-lsp` using `vim-plug`, I recommend the following plugins:
 
@@ -71,9 +83,10 @@ Plug 'https://github.com/prabirshrestha/asyncomplete.vim'
 Plug 'https://github.com/prabirshrestha/asyncomplete-lsp.vim'
 Plug 'https://github.com/prabirshrestha/vim-lsp'
 Plug 'https://github.com/mattn/vim-lsp-settings'
+Plug 'https://github.com/laher/gothx.vim'
 ```
 
-_note that this assumes `vim-plug`. Plugin manager tends to use a different function name for specifying plugins._
+_note that this assumes `vim-plug`. Plugin managers tend to use a different function name for specifying plugins._
 
 ## Out of scope
 
