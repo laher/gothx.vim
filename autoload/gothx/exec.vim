@@ -1,14 +1,13 @@
 
 function! s:output_handler(job_id, data, event_type)
+    let g:myscratch = bufnr("scratch", 1)
     if a:event_type == "exit"
       echom 'gothx: job done. Exit code: ' . a:data
+      call appendbufline(g:myscratch, '$', 'gothx: job done. Exit code: ' . a:data)
     else
       for l in a:data
-        put =(l)
+        call appendbufline(g:myscratch, '$', l)
       endfor
-      " put =(join(a:data, "\n"))
-      " put =(join(a:data, "; "))
-      "call writefile(a:data, glob('/tmp/out.log'), 'a')
     endif
 endfunction
 
