@@ -17,6 +17,6 @@ function! s:install_all_binaries(update)
     call add(argv, '-u')
   endif
   let argv += [ '-v', keyify_addr, impl_addr, goplay_addr]
-  call gothx#utils#run_maybe_async(argv)
+  call gothx#exec#run_maybe_async(argv)
 endfunction
 

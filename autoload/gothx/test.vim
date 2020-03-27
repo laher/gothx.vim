@@ -5,7 +5,7 @@ set cpo&vim
 function! gothx#test#Test() abort
   let l:args = ['test', '-v']
   let l:cmd = ['go'] + l:args
-  call gothx#utils#run_maybe_async(l:cmd)
+  call gothx#exec#run_maybe_async(l:cmd)
 endfunction
 
 " restore Vi compatibility settings

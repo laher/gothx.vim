@@ -22,7 +22,9 @@ In the spirit of giving back, I'll make sure to offer PRs to vim-go for any feat
 
 ## Install in the usual way
 
-Use vim8 or neovim. Set up an LSP client.
+Pre-requisites: Use vim8 or neovim. Set up an LSP client (with `gopls`), for all the usual goodies like go-to-definition, get-referrers, format-on-save, etc.
+
+Install the plugin [along with async.vim] in the usual way (depending on what plugin manager you use).
 
 For example, using vim-plug:
 
