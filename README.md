@@ -33,10 +33,18 @@ Plug 'prabirshrestha/async.vim'
 Plug 'laher/gothx.vim'
 ```
 
-### Installing/updating binaries (once only)
+### Installing/updating go-based tooling 
+
+#### Install (once only)
 
 ```vim
 :ThxInstallBinaries
+```
+
+#### Upgrade (periodically)
+
+```vim
+:ThxUpdateBinaries
 ```
 
 NOTE: if you have [async.vim](https://github.com/prabirshrestha/async.vim) installed, `gothx.vim` will install your go things asynchronously … if not, it'll let you know it's blocking your UI thread.
