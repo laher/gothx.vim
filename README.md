@@ -5,16 +5,13 @@ A go plugin for vim/nvim, which only tries to do things that `gopls` doesn't do.
 The idea of this **Experimental** plugin is twofold:
 
  1. To provide features which are **not** currently supported by `gopls`.
-   * Use an LSP client. See [below](#recommended-lsp-setup)
-   * As `gopls` grows and matures, overlapping features will be deprecated/removed from `gothx.vim` (deprecated and replaced with messages 'use your LSC for this').
- 2. To focus on modules-aware tooling. 
+   * You'll need to install a separate LSP client. See [below](#recommended-lsp-setup)
+   * As `gopls` grows and matures, any overlapping features will be deprecated/removed from `gothx.vim` (deprecated and replaced with messages 'use your LSC for this').
+ 2. To focus on modules-aware tooling only. 
    * Avoid tools which are not actively embracing modules support (such as `guru`, which is being abandoned).
 
-Note that this plugin doesn't hope to cover the same featureset as [vim-go](https://github.com/fatih/vim-go), (nor `govim`, probably). 
-
-vim-go's large feature-set overlaps with [recent] LSPs. You _can_ configure vim-go to disable overlapping features - I have documented those vim-go config options below, in case that's what you're really looking for. 
-
-I prefer using the same LSP client across different languages, so I'd sooner only use plugins which expressly avoid LSP-supplied features.
+Note that this plugin doesn't hope to cover the same featureset as [vim-go](https://github.com/fatih/vim-go), (nor `govim`, probably). In fact, a third aim is to have a 'lighter' feature-set. gothx.vim will hopefully remain kinda small and nimble, and `:ThxUpdateBinaries` will hope to stay reasonably fast. 
+I prefer using the same LSP client across different languages, so I'd sooner only use plugins which expressly avoid LSP-supplied features. vim-go's large feature-set overlaps with [recent] LSPs. You _can_ configure vim-go to disable those overlapping features - I have documented [those vim-go configuration options below](#disabling-lsp-supported-features-in-vim-go), just in case that's what you're really looking for. 
 
 ## Install in the usual way
 
