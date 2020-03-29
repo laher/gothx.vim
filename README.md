@@ -133,9 +133,8 @@ In the spirit of giving back, I'll make sure to offer PRs to vim-go for any feat
 
 ### Disabling LSP-supported features in vim-go 
 
-The main thing is to set `g:go_pls_enabled=0`, but there are a number of other LSP-supported features which vim-go solves in its own way. It seems like you can disable all of these using config. 
-
-The following should get you most of the way there:
+If you'd prefer to stick with vim-go but still avoid those feature-overlaps, the main thing you should do is to set `g:go_pls_enabled=0`. Note that there are a number of other LSP-supported features which vim-go solves in its own way. It seems like you can disable all of these using configuration settings. 
+The following should get you most of the way there. Please let me know if you find others:
 
 ```
 let g:go_gopls_enabled=0
@@ -144,7 +143,7 @@ let g:go_doc_keywordprg_enabled=0
 let g:go_fmt_autosave=0
 ```
 
-I discussed the possibility of automatically with bc, but given the variety of ways people are already using vim-go, he understandably thought it would make the code and the user experience become more confusing. So, he updated the vim-go docs, and I've updated these docs, to clarify.
+I discussed with bc about automating these defaults based on a single item, or based on the presence of other LSPs. Given the variety of ways people are already using vim-go, `bc` understandably thought it would make the vim-go code and the user experience become more confusing, surprising, and harder to support. So, he updated the vim-go docs, and I've updated these docs, to clarify.
 
 
 okthxvi!
