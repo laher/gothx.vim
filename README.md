@@ -12,13 +12,9 @@ The idea of this **Experimental** plugin is twofold:
 
 Note that this plugin doesn't hope to cover the same featureset as [vim-go](https://github.com/fatih/vim-go), (nor `govim`, probably). 
 
-vim-go's large feature-set overlaps with [recent] LSPs, making it an awkward fit for a polymath like me. I prefer using the same LSP client across different languages, so I'd sooner only use plugins which expressly avoid LSP-supplied features.
+vim-go's large feature-set overlaps with [recent] LSPs. You _can_ configure vim-go to disable overlapping features - I have documented those vim-go config options below, in case that's what you're really looking for. 
 
-## Special love for vim-go
-
-I *LOVE* the vim-go project. I fell in love with `vim` through that project, and between 2012-2020, it got me using `vim` or `nvim` as my main editor. vim-go was light-years ahead of other editors during the early days, and I think its 'lego blocks' architecture allowed for other plugin-writers to copy its features easily. Many thanks to the vim-go team, especially [fatih](https://github.com/fatih) and [bc](https://github.com/bhcleek). If vim-go ever gets adjusted with 'getting out of the way of the Language Server' in mind, then I'm keen to embrace it again. 
-
-In the spirit of giving back, I'll make sure to offer PRs to vim-go for any features developed in gothx.vim . Please hold me to that.
+I prefer using the same LSP client across different languages, so I'd sooner only use plugins which expressly avoid LSP-supplied features.
 
 ## Install in the usual way
 
@@ -131,5 +127,27 @@ _note that this assumes `vim-plug`. Plugin managers tend to use a different func
    * https://github.com/mattn/vim-goaddtags 
    * https://github.com/mattn/vim-gosrc
    * https://github.com/mattn/go-errcheck-vim
+
+## Special love for vim-go
+
+I *LOVE* the vim-go project. I fell in love with `vim` through that project, and between 2012-2020, it got me using `vim` or `nvim` as my main editor. vim-go was light-years ahead of other editors during the early days, and I think its 'lego blocks' architecture allowed for other plugin-writers to copy its features easily. Many thanks to the vim-go team, especially [fatih](https://github.com/fatih) and [bc](https://github.com/bhcleek). 
+
+In the spirit of giving back, I'll make sure to offer PRs to vim-go for any features developed in gothx.vim . Please hold me to that.
+
+### Disabling LSP-supported features in vim-go 
+
+The main thing is to set `g:go_pls_enabled=0`, but there are a number of other LSP-supported features which vim-go solves in its own way. It seems like you can disable all of these using config. 
+
+The following should get you most of the way there:
+
+```
+let g:go_gopls_enabled=0
+let g:go_def_mapping_enabled=0
+let g:go_doc_keywordprg_enabled=0
+let g:go_fmt_autosave=0
+```
+
+I discussed the possibility of automatically with bc, but given the variety of ways people are already using vim-go, he understandably thought it would make the code and the user experience become more confusing. So, he updated the vim-go docs, and I've updated these docs, to clarify.
+
 
 okthxvi!
