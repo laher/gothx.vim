@@ -62,13 +62,14 @@ You're free to map these commands to the vim-go names if you're not using vim-go
 | `:ThxImpl`     | [x]      | `:GoImpl`          | [impl](https://github.com/josharian/impl) |  |
 | `gx` on import | [x]      | -                  | | In vim, `gx` opens urls in a browser. Use it to opek gopkg.dev on import statements |
 | `:ThxPlay`     | [X]      | `:GoPlay`          | | vim-go uses vim-script plus `curl`. I'm using a tool which doesn't support line selection (yet). |
+| `:ThxIfErr`    | [x]     | `:GoIfErr`         | [iferr](https://github.com/koron/iferr) | Is this something `gopls` plans to cover? |
 
 
-| Planned        | Started | `vim-go` feature | Related Tool                            | Notes  |
-|----------------|---------|--------------------|-----------------------------------------|--------|
-| `:ThxDoc`      | [ ]     | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | See `gx`, above. Seems like a good start. |
-| `:ThxAddTags`  | [ ]     | `:GoAddTags`       | [gomodifytags](https://github.com/fatih/gomodifytags) | |
-| `:ThxIfErr`    | [ ]     | `:GoIfErr`         | [iferr](https://github.com/koron/iferr) | Is this something `gopls` plans to cover? |
+| Planned          | Started | `vim-go` feature   | Related Tool                            | Notes  |
+|------------------|---------|--------------------|-----------------------------------------|--------|
+| `:ThxDoc`        | [ ]     | `:GoDoc`           | [gogetdoc](https://github.com/zmb3/gogetdoc)  | See `gx`, above. Seems like a good start. |
+| `:ThxAddTags`    | [ ]     | `:GoAddTags`       | [gomodifytags](https://github.com/fatih/gomodifytags) | |
+| `:ThxFillStruct` | [ ]     | `:GoFillStruct`    | | |
 
 ## LSP notes
 

@@ -18,7 +18,10 @@ func main() {
 		a string
 	}
 	_ = s{"b"}
-	ioutil.ReadFile("x.txt")
+	_, err := ioutil.ReadFile("x.txt")
+	if err != nil {
+		return
+	}
 
 	fmt.Println("oh-yeah")
 
