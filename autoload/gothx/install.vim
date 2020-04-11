@@ -12,7 +12,7 @@ function! s:install_all_binaries(update)
   let keyify_addr = 'honnef.co/go/tools/cmd/keyify'
   let impl_addr = 'github.com/josharian/impl'
   let goplay_addr = 'github.com/haya14busa/goplay/cmd/goplay'
-  let iferr_addr = 'github.com/'
+  let iferr_addr = 'github.com/koron/iferr'
   let argv = ['go', 'get']
   if a:update
     call add(argv, '-u')
