@@ -82,12 +82,12 @@ For the time being I recommend vim-lsp, because in combination with `vim-lsp-set
 To use `vim-lsp` using `vim-plug`, I recommend the following plugins:
 
 ```viml
-Plug 'https://github.com/prabirshrestha/async.vim'
-Plug 'https://github.com/prabirshrestha/asyncomplete.vim'
-Plug 'https://github.com/prabirshrestha/asyncomplete-lsp.vim'
-Plug 'https://github.com/prabirshrestha/vim-lsp'
-Plug 'https://github.com/mattn/vim-lsp-settings'
-Plug 'https://github.com/laher/gothx.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'laher/gothx.vim'
 ```
 
 _note that this assumes `vim-plug`. Plugin managers tend to use a different function name for specifying plugins._
