@@ -13,6 +13,7 @@ function! s:install_all_binaries(update)
   let impl_addr = 'github.com/josharian/impl'
   let goplay_addr = 'github.com/haya14busa/goplay/cmd/goplay'
   let iferr_addr = 'github.com/koron/iferr'
+  let fillstruct_addr = 'github.com/davidrjenni/reftools/cmd/fillstruct@master'
   let argv = ['go', 'get']
   if a:update
     call add(argv, '-u')

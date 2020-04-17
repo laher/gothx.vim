@@ -3,9 +3,9 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 function! gothx#keyify#Keyify()
-  " Needs: https://github.com/dominikh/go-tools/pull/272
+  """ Needs: https://github.com/dominikh/go-tools/pull/272
   let l:cmd = printf('keyify -json %s:#%s', shellescape(expand('%:p')), gothx#utils#bytes_offset(line('.'), col('.')))
-  let l:out = system(l:cmd)
+  let l:out = system(l:cmd, bufnr('%'))
   if v:shell_error != 0
     call s:handle_errors(l:out)
   endif

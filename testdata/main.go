@@ -10,6 +10,16 @@ type i interface {
 }
 
 type c struct {
+	a string
+	b string
+}
+
+func x() error {
+	var err error
+	_ = err
+
+	_ = c{}
+	return nil
 }
 
 func main() {
