@@ -6,7 +6,8 @@ function! gothx#iferr#IfErr()
   let l:cmd = printf('iferr -pos %s', gothx#utils#bytes_offset(line('.'), col('.')))
   let l:out = system(l:cmd, bufnr('%'))
   if v:shell_error != 0
-    call s:handle_errors(l:out)
+    call gothx#log#Error(l:out)
+    return
   endif
   if len(l:out) == 1
     return

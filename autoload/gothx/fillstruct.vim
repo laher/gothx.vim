@@ -5,21 +5,22 @@ set cpo&vim
 
 function! gothx#fillstruct#FillStruct() abort
   let l:cmd = ['fillstruct',
-      \ '-file', bufname(''),
+      \ '-modified', 
       \ '-offset', gothx#utils#bytes_offset(line('.'), col('.')),
       \ '-line', line('.')]
 
   let l:pos = getpos('.')
-  let l:out = system(l:cmd, bufnr('%'))
+  let l:out = system(l:cmd, bufnr('%')) " pass file into stdin
 
   if v:shell_error != 0
-    call s:handle_errors(l:out)
+    call gothx#log#Error(l:out)
+    return
   endif
 
   try
     let l:json = json_decode(l:out)
   catch
-    call s:handle_errors(l:out)
+    call gothx#log#Error(l:out)
     return
   endtry
   try
