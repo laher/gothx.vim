@@ -5,7 +5,7 @@ set cpo&vim
 
 function! gothx#fillstruct#FillStruct() abort
   let l:cmd = ['fillstruct',
-      \ '-modified', 
+      \ '-file', bufname(''),
       \ '-offset', gothx#utils#bytes_offset(line('.'), col('.')),
       \ '-line', line('.')]
 

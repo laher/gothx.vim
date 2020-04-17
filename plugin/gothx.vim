@@ -6,5 +6,5 @@ if &rtp =~ 'fzm.vim'
   call fzm#Add('Go: IfErr', {'exec': 'call gothx#iferr#IfErr()', 'for': 'go'})
   call fzm#Add('Go: FillStruct', {'exec': 'call gothx#fillstruct#FillStruct()', 'for': 'go'})
   call fzm#Add('Go: Play', {'exec': 'call gothx#play#Play()', 'for': 'go'})
-  call fzm#Add('Go: Alternate', {'exec': 'call gothx#alternate#Switch()', 'for': 'go'})
+  call fzm#Add('Go: Alternate', {'exec': "call gothx#alternate#Switch(0, '')", 'for': 'go'})
 endif
