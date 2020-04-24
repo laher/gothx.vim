@@ -14,6 +14,10 @@ type c struct {
 	b string
 }
 
+func (_ c) Do() {
+	// nothing
+}
+
 func x() error {
 	var err error
 	_ = err
