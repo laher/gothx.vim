@@ -18,7 +18,7 @@ func (_ c) Do() {
 	// nothing
 }
 
-func x() error {
+func xfunc() error {
 	var err error
 	_ = err
 
@@ -32,6 +32,7 @@ func main() {
 		a string
 	}
 	_ = s{"b"}
+	_ = s{}
 	_, err := ioutil.ReadFile("x.txt")
 	if err != nil {
 		return
