@@ -1,5 +1,5 @@
 
-if &rtp =~ 'fuzzymenu.vim'
+if exists('g:fuzzymenu_loaded')
   call fuzzymenu#AddAll({
       \ 'Run': {'exec': 'call gothx#run#Run()'},
       \ 'Test': {'exec': 'call gothx#test#Test()'},
